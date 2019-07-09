@@ -19,11 +19,19 @@
 		function getMP3Files(){
 			$ul= "<ul id=\"musiclist\">";
 			$li="<li class=\"mp3item\">";
+			$a_begin="<a href=\"";
+			$a_mid="\">";
 			$ul_end="</ul>";
 			$li_end="</li>";
+			$a_end="</a>";
 			echo $ul;
-			echo $li;
-			echo $li_end;
+			foreach(glob("./songs/*.mp3") as $afile){
+				echo $li;
+				echo $a_begin.$afile.$a_mid;
+				echo basename($afile)." (".round(filesize($afile)/1024,0)." KB)";
+				echo $a_end;
+				echo $li_end;
+			}
 			echo $ul_end;
 		}
         function getLinks(){
