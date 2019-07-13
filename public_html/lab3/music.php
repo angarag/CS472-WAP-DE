@@ -32,7 +32,32 @@
 				echo $a_end;
 				echo $li_end;
 			}
+			getM3UFiles();
 			echo $ul_end;
+		}
+		function getM3UFiles(){
+			$ul= "<ul>";
+			$li="<li>";
+			$pli="<li class=\"playlistitem\">";
+			$a_begin="<a href=\"";
+			$a_mid="\">";
+			$ul_end="</ul>";
+			$li_end="</li>";
+			$a_end="</a>";
+			foreach(glob("./songs/*.m3u") as $afile){
+				echo $pli;
+				echo basename($afile);
+				echo $ul;
+				foreach(file($afile) as $fcontent){
+					if($fcontent[0]!="#"){//&& strpos($fcontent,".mp3")!=strlen($fcontent)-4){
+						echo $li;
+						echo $fcontent;
+						echo $li_end;	
+					}
+				}
+				echo $ul_end;
+				echo $li_end;
+			}
 		}
         function getLinks(){
 			$num_links=$_GET["newspages"]!=NULL?$_GET["newspages"]:5;
@@ -91,6 +116,7 @@
 		<div class="section">
 			<h2>My Music and Playlists</h2>
 			<?=getMP3Files();?>
+
 <!-- 
 			<ul id="musiclist">
 				<li class="mp3item">
