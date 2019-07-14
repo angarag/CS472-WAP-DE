@@ -17,18 +17,42 @@
         <?php
 		$num_songs=5678;
 		function getMP3Files(){
+			
 			$ul= "<ul id=\"musiclist\">";
 			$li="<li class=\"mp3item\">";
-			$a_begin="<a href=\"";
+			$a_begin="<a href=\" target=\"_black\"";
 			$a_mid="\">";
 			$ul_end="</ul>";
 			$li_end="</li>";
 			$a_end="</a>";
+			$songs=glob("./songs/*.mp3");
+			$option=$_GET["option"]!=NULL?$_GET["option"]:false;
+			if($option!=false)
+			echo "Current sorting: ".$option;
 			echo $ul;
-			foreach(glob("./songs/*.mp3") as $afile){
+			switch($option){
+				case "shuffle":
+				shuffle($songs);
+				break;
+				case "reverse":
+				$songs=array_reverse($songs);
+				break;
+				case "sortBySize":
+				$arr=array();
+				foreach($songs as $song){
+					$arr[$song]=round(filesize($song)/1024,0);
+				}
+				arsort($arr);
+				$songs=array_keys($arr);
+				break;
+				default:
+				break;
+			}
+			foreach($songs as $afile){
 				echo $li;
 				echo $a_begin.$afile.$a_mid;
 				echo basename($afile)." (".round(filesize($afile)/1024,0)." KB)";
+				echo "<audio controls src=\"".$afile."\">Your browser does not support audio element</audio>";
 				echo $a_end;
 				echo $li_end;
 			}
@@ -115,6 +139,9 @@
 		<!-- Exercise 7: MP3 Formatting -->
 		<div class="section">
 			<h2>My Music and Playlists</h2>
+			<h3>
+			Supported sorting options: shuffle, reverse,sortBySize. ie: http://mumstudents.org/~000-98-6689/lab3/music.php?newspages=11&option=reverse
+			</h3>
 			<?=getMP3Files();?>
 
 <!-- 
@@ -143,7 +170,6 @@
 				</li>
 			</ul> --> 
 		</div>
-
 		<div>
 			<a href="http://validator.w3.org/check/referer">
 				<img src="http://mumstudents.org/cs472/Labs/3/w3c-html.png" alt="Valid HTML5" />
