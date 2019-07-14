@@ -10,7 +10,7 @@
 	<head>
 		<title>Music Viewer</title>
 		<meta charset="utf-8" />
-		<link href="viewer.css" type="text/css" rel="stylesheet" />
+		<link href="./viewer.css" type="text/css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -20,7 +20,7 @@
 			
 			$ul= "<ul id=\"musiclist\">";
 			$li="<li class=\"mp3item\">";
-			$a_begin="<a href=\" target=\"_black\"";
+			$a_begin="<a href=\"";
 			$a_mid="\">";
 			$ul_end="</ul>";
 			$li_end="</li>";

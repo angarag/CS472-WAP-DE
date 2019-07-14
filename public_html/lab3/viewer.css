@@ -1,3 +1,57 @@
 audio {
   height: 1.1rem;
 }
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+body {
+  background-color: #ddeeff;
+  margin-left: 1em;
+}
+
+h1 {
+  color: #000066;
+  font-family: fantasy;
+  font-size: 24pt;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #006600;
+  font-family: Arial, sans-serif;
+  font-size: 14pt;
+  padding-left: 3em;
+}
+
+li {
+  padding-bottom: 0.5em;
+  font-family: Verdana, sans-serif;
+}
+
+li li {
+  padding-bottom: 0em;
+  padding-top: 0em;
+}
+
+li > ul {
+  list-style-type: disc;
+  list-style-image: none;
+}
+
+#listarea {
+  background-color: #ddeeff;
+  border: 5px double blue;
+  padding: 0;
+  width: 50%;
+  min-width: 500px;
+}
+
+.mp3item {
+  list-style-image: url(mp3icon.gif);
+}
+
+.playlistitem {
+  list-style-image: url(playlisticon.gif);
+}
