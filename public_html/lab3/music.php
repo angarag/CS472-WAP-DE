@@ -140,7 +140,8 @@
 		<div class="section">
 			<h2>My Music and Playlists</h2>
 			<h3>
-			Supported sorting options: shuffle, reverse,sortBySize. ie: http://mumstudents.org/~000-98-6689/lab3/music.php?newspages=11&option=reverse
+			Supported sorting options: shuffle, reverse,sortBySize. ie:
+			<a href="http://mumstudents.org/~000-98-6689/lab3/music.php?newspages=4&option=shuffle">Shuffle</a> 
 			</h3>
 			<?=getMP3Files();?>
 
