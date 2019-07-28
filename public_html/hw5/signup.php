@@ -48,7 +48,7 @@
     <div class="match">
       <input class="column" type="submit" value="Sign Up" />
     </div>
-    <input type="hidden" name="db_pass" value="">
+    <input type="hidden" name="db_pass" value="meant2B">
   </fieldset>
 </form>
 <?php

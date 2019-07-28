@@ -13,7 +13,7 @@
         <input type="password" name="password">
 </div>
         <input type="submit"  value="View My Matches">
-        <input type="hidden" name="db_pass" value="">
+        <input type="hidden" name="db_pass" value="meant2B">
 </fieldset>
     </form>
 <?php
