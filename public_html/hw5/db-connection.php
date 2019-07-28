@@ -1,9 +1,20 @@
  <?php
+/* Connect to a MySQL database using driver invocation */
+$port=$_GET["port"];
+$dsn = 'mysql:dbname=nerdluv;port=3306;host=127.0.0.1';
+$user = 'match-maker';
+$password = 'meant2B';
+
+try {
+    $dbh = new PDO($dsn, $user, $password);
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+}
 
 function addSingle(){
  $db_pass=$_POST["db_pass"];
  echo $db_pass;
-      $dbh = new PDO("mysql:dbname=nerdluv;host=mumstudents.org", "match-maker",  $db_pass);
+      $dbh = new PDO("mysql:dbname=nerdluv;port=3306;host=127.0.0.1", "match-maker",  $db_pass);
       $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); 
 $stmt = $dbh->prepare("INSERT INTO singles VALUES (NULL, :name, :pass_hash, :gender, :age, :type1, :type2, :type3, :type4, :os, :min, :max)");
 $password=$_POST["password"];
@@ -30,7 +41,7 @@ $stmt->execute();
 
 function getMatches(){
       $db_pass=$_POST["db_pass"];
-      $dbh = new PDO("mysql:dbname=nerdluv;host=mumstudents.org", "match-maker",  $db_pass);
+      $dbh = new PDO("mysql:dbname=nerdluv;port=3306;host=127.0.0.1", "match-maker",  $db_pass);
       $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); 
 $stmt = $dbh->prepare("SELECT * FROM singles WHERE name = :name AND pass =:pass_hash");
 $name=$_POST["name"];
