@@ -1,0 +1,13 @@
+code {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 7px;
+  background-color: grey;
+  color: yellow;
+  line-height: 2.5rem;
+}
+div {
+  border: 2px solid grey;
+  margin: 5px;
+  padding: 5px;
+}

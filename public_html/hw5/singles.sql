@@ -1,0 +1,77 @@
+-- user: match-maker
+-- pass: meant2B
+
+DROP DATABASE IF EXISTS nerdluv;
+CREATE DATABASE nerdluv;
+USE nerdluv;
+
+DROP TABLE IF EXISTS singles;
+CREATE TABLE `singles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `pass` varchar(256) DEFAULT NULL, 
+  `gender` char(1) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `type1` char(1) DEFAULT NULL,
+  `type2` char(1) DEFAULT NULL,
+  `type3` char(1) DEFAULT NULL,
+  `type4` char(1) DEFAULT NULL,
+  `os` varchar(20) DEFAULT NULL,
+  `min` int(11) DEFAULT NULL,
+  `max` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1; 
+
+INSERT INTO singles VALUES
+(NULL, 'Ada Lovelace', SHA2(CONCAT('Ada Lovelace','Ada Lovelace'), 256),'F',96,'I','S','T','J','Linux',24,99),
+(NULL, 'Adele Goldberg', SHA2(CONCAT('Adele Goldberg','Adele Goldberg'), 256),'F',65,'E','N','F','J','Windows',50,70),
+(NULL, 'Alan Turing', SHA2(CONCAT('Alan Turing','Alan Turing'), 256),'M',41,'E','S','T','P','Mac OS X',31,50),
+(NULL, 'Anakin Skywalker', SHA2(CONCAT('Anakin Skywalker','Anakin Skywalker'), 256),'M',27,'I','N','T','J','Linux',15,30),
+(NULL, 'Angry Video Game Nerd', SHA2(CONCAT('Angry Video Game Nerd','Angry Video Game Nerd'), 256),'M',29,'I','S','T','J','Mac OS X',1,99),
+(NULL, 'Anita Borg', SHA2(CONCAT('Anita Borg','Anita Borg'), 256),'F',54,'I','S','F','P','Windows',41,55),
+(NULL, 'Barbara Liskov', SHA2(CONCAT('Barbara Liskov','Barbara Liskov'), 256),'F',71,'E','S','F','J','Mac OS X',41,76),
+(NULL, 'Bill Gates', SHA2(CONCAT('Bill Gates','Bill Gates'), 256),'M',52,'I','N','T','J','Windows',2,99),
+(NULL, 'Bill Joy', SHA2(CONCAT('Bill Joy','Bill Joy'), 256),'M',54,'E','N','F','P','Linux',50,70),
+(NULL, 'Bjarne Stroustroup', SHA2(CONCAT('Bjarne Stroustroup','Bjarne Stroustroup'), 256),'M',59,'I','N','F','J','Windows',40,62),
+(NULL, 'Buffy Summers', SHA2(CONCAT('Buffy Summers','Buffy Summers'), 256),'F',27,'I','N','T','P','Windows',18,49),
+(NULL, 'Charles Babbage', SHA2(CONCAT('Charles Babbage','Charles Babbage'), 256),'M',79,'E','S','F','P','Linux',30,82),
+(NULL, 'Dana Scully', SHA2(CONCAT('Dana Scully','Dana Scully'), 256),'F',41,'I','S','T','J','Mac OS X',36,54),
+(NULL, 'Deanna Troi', SHA2(CONCAT('Deanna Troi','Deanna Troi'), 256),'F',53,'E','N','F','J','Mac OS X',32,48),
+(NULL, 'Donald Knuth', SHA2(CONCAT('Donald Knuth','Donald Knuth'), 256),'M',70,'I','N','T','J','Linux',12,17),
+(NULL, 'Edsger Dijkstra', SHA2(CONCAT('Edsger Dijkstra','Edsger Dijkstra'), 256),'M',72,'I','S','T','P','Linux',16,58),
+(NULL, 'Ellen Ripley', SHA2(CONCAT('Ellen Ripley','Ellen Ripley'), 256),'F',35,'E','S','F','J','Linux',20,40),
+(NULL, 'Frances Allen', SHA2(CONCAT('Frances Allen','Frances Allen'), 256),'F',78,'E','S','T','P','Linux',67,78),
+(NULL, 'Gordon Moore', SHA2(CONCAT('Gordon Moore','Gordon Moore'), 256),'M',81,'E','N','F','P','Windows',60,99),
+(NULL, 'Grace Hopper', SHA2(CONCAT('Grace Hopper','Grace Hopper'), 256),'F',87,'I','S','F','P','Windows',47,80),
+(NULL, 'Jadzia Dax', SHA2(CONCAT('Jadzia Dax','Jadzia Dax'), 256),'F',46,'E','N','F','J','Mac OS X',18,32),
+(NULL, 'James Gosling', SHA2(CONCAT('James Gosling','James Gosling'), 256),'M',55,'E','S','F','J','Linux',18,40),
+(NULL, 'Jeannette Wing', SHA2(CONCAT('Jeannette Wing','Jeannette Wing'), 256),'F',38,'I','N','T','P','Mac OS X',45,60),
+(NULL, 'Kathryn Janeway', SHA2(CONCAT('Kathryn Janeway','Kathryn Janeway'), 256),'F',49,'E','S','T','J','Windows',30,55),
+(NULL, 'Lara Croft', SHA2(CONCAT('Lara Croft','Lara Croft'), 256),'F',23,'E','N','T','P','Linux',18,30),
+(NULL, 'Leeloo', SHA2(CONCAT('Leeloo','Leeloo'), 256),'F',19,'I','S','T','J','Linux',1,99),
+(NULL, 'Leia Organa', SHA2(CONCAT('Leia Organa','Leia Organa'), 256),'F',53,'I','S','F','J','Windows',20,60),
+(NULL, 'Lenore Blum', SHA2(CONCAT('Lenore Blum','Lenore Blum'), 256),'F',70,'I','N','T','P','Mac OS X',66,99),
+(NULL, 'Marissa Mayer', SHA2(CONCAT('Marissa Mayer','Marissa Mayer'), 256),'F',35,'E','N','T','P','Linux',20,40),
+(NULL, 'Mary Lou Jepsen', SHA2(CONCAT('Mary Lou Jepsen','Mary Lou Jepsen'), 256),'F',45,'I','S','T','J','Windows',10,80),
+(NULL, 'Ms Frizzle', SHA2(CONCAT('Ms Frizzle','Ms Frizzle'), 256),'F',39,'E','N','T','P','Mac OS X',19,49),
+(NULL, 'Natalie Portman', SHA2(CONCAT('Natalie Portman','Natalie Portman'), 256),'F',26,'I','N','F','J','Mac OS X',20,39),
+(NULL, 'Niklaus Wirth', SHA2(CONCAT('Niklaus Wirth','Niklaus Wirth'), 256),'M',76,'E','N','F','J','Windows',50,77),
+(NULL, 'Nostalgia Critic', SHA2(CONCAT('Nostalgia Critic','Nostalgia Critic'), 256),'M',28,'E','N','T','J','Linux',12,79),
+(NULL, 'Nyota Uhura', SHA2(CONCAT('Nyota Uhura','Nyota Uhura'), 256),'F',77,'E','N','F','P','Mac OS X',70,99),
+(NULL, 'Oldspice Guy', SHA2(CONCAT('Oldspice Guy','Oldspice Guy'), 256),'M',36,'E','N','T','J','Windows',1,99),
+(NULL, 'Rasmus Lerdorf', SHA2(CONCAT('Rasmus Lerdorf','Rasmus Lerdorf'), 256),'M',41,'E','N','T','P','Linux',15,35),
+(NULL, 'Richard Stallman', SHA2(CONCAT('Richard Stallman','Richard Stallman'), 256),'M',57,'I','S','F','J','Linux',46,56),
+(NULL, 'River Tam', SHA2(CONCAT('River Tam','River Tam'), 256),'F',26,'E','N','T','J','Linux',18,25),
+(NULL, 'Roberta Williams', SHA2(CONCAT('Roberta Williams','Roberta Williams'), 256),'F',57,'E','N','F','P','Windows',54,67),
+(NULL, 'Rosie O Donnell', SHA2(CONCAT('Rosie O Donnell','Rosie O Donnell'), 256),'F',46,'E','N','F','J','Windows',30,50),
+(NULL, 'Sarah Connor', SHA2(CONCAT('Sarah Connor','Sarah Connor'), 256),'F',53,'I','S','F','P','Windows',49,67),
+(NULL, 'Seven of Nine', SHA2(CONCAT('Seven of Nine','Seven of Nine'), 256),'F',40,'I','S','T','J','Windows',12,50),
+(NULL, 'Stewie Griffin', SHA2(CONCAT('Stewie Griffin','Stewie Griffin'), 256),'M',1,'I','N','T','P','Mac OS X',1,59),
+(NULL, 'Stuart Reges', SHA2(CONCAT('Stuart Reges','Stuart Reges'), 256),'M',48,'I','N','F','P','Mac OS X',18,35),
+(NULL, 'Tpol', SHA2(CONCAT('Tpol','Tpol'), 256),'F',35,'I','S','T','J','Windows',30,39),
+(NULL, 'Trinity', SHA2(CONCAT('Trinity','Trinity'), 256),'F',42,'E','S','F','P','Linux',35,55),
+(NULL, 'Tyler Durden', SHA2(CONCAT('Tyler Durden','Tyler Durden'), 256),'M',46,'E','N','F','P','Mac OS X',20,39),
+(NULL, 'Valentina Tereshkova', SHA2(CONCAT('Valentina Tereshkova','Valentina Tereshkova'), 256),'F',71,'E','N','T','J','Mac OS X',55,65),
+(NULL, 'Vint Cerf', SHA2(CONCAT('Vint Cerf','Vint Cerf'), 256),'M',67,'I','S','F','P','Mac OS X',28,55),
+(NULL, 'Yukihiro Matsumoto', SHA2(CONCAT('Yukihiro Matsumoto','Yukihiro Matsumoto'), 256),'M',45,'E','N','T','P','Mac OS X',10,25),
+(NULL, 'Zelda', SHA2(CONCAT('Zelda','Zelda'), 256),'F',59,'E','S','T','P','Windows',40,62);
