@@ -1,0 +1,43 @@
+#main {
+  max-height: 80%vh;
+  text-align: center;
+}
+header > span {
+  margin-bottom: 5px;
+}
+header,
+footer {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+body {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+* {
+  box-sizing: border-box;
+}
+fieldset {
+  text-align: initial;
+  margin: 10px auto;
+  width: 425px;
+}
+fieldset > form > div {
+  margin: 0 auto;
+}
+fieldset > form > div > input {
+  width: 33%;
+}
+fieldset > form > div > input:nth-child(1) {
+  margin-left: 40px;
+}
+table,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+table {
+  width: 100%;
+}

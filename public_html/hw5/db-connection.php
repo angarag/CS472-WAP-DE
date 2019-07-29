@@ -10,7 +10,7 @@ try {
 } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
 }
-
+      
 function addSingle(){
  $db_pass=$_POST["db_pass"];
  echo $db_pass;
