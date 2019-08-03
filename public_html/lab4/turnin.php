@@ -11,9 +11,12 @@ foreach(glob("./*formatted.txt") as $file){
    echo file_get_contents($file);
    echo "\n";
 }
-if(is_uploaded_file($_FILES["mars_file"]))
+if(is_uploaded_file($_FILES["mars_file"]["name"]))
 print_r($_FILES["mars_file"]);
 var_dump($_FILES["mars_file"]);
-//header("Location: turnin_main.php?param=".$input);
+session_start();
+$_SESSION["W6-exercise"]=$input;
+setcookie("name","value");
+header("Location: turnin_main.php");
 //exit(0);
 ?>

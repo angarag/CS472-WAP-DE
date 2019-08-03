@@ -17,7 +17,12 @@
       <input type="file" name="mars_file"/>
     </form>
     <?php
-    echo $_GET["param"];
+    session_start();
+    if(isset($_SESSION["W6-exercise"])){
+    echo $_SESSION["W6-exercise"];
+    session_destroy();
+
+    }
     ?>
   </body>
 </html>
