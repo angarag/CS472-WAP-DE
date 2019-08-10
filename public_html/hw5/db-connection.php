@@ -1,8 +1,8 @@
  <?php
 /* Connect to a MySQL database using driver invocation */
 $dsn = 'mysql:dbname=nerdluv;port=3306;host=127.0.0.1';
-$user = 'match-maker';
-$pass = 'meant2B';
+$user = 'root';// 'match-maker';
+$pass = '';//'meant2B';
 
 try {
     $dbh = new PDO($dsn, $user, $pass);
