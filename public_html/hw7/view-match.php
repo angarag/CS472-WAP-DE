@@ -1,16 +1,13 @@
 <?php include "../hw4/top.html";
-session_start();
-$username=$_SESSION["username"];
-if(!$username){
-header("Location: login.php?message=loginFirst");
-}
-else
+include "./controller/user-controller.php";
+include "./controller/match-controller.php";
+if(checkIfUserLoggedIn())
 ?>
-<h1><?="Matches for " . $_SESSION["username"]?></h1>
+<h1><?="Matches for " . getUsername()?></h1>
 <a href="logout.php">Log out</a>
 <?php
-$matches= $_SESSION["matches"];
-$index=isset($_GET["match"])?$_GET["match"]:0;
+$matches= getMatches();
+$index=getCurrentMatchArrayIndex();
 if(count($matches))
 $match=$matches[$index];
 else 

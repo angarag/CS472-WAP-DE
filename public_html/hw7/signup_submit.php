@@ -1,5 +1,5 @@
 <?php
-include("../hw5/db-connection.php");
+include("./db-connection.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST["name"] && $_POST["gender"] && $_POST["age"] && $_POST["ptype"]) {
@@ -32,7 +32,7 @@ $_SESSION["invalid_form"]=["HTTP GET NOT SUPPORTED"];
 function validateForm($form){
     $err_msgs=array();
     list("name"=>$name,"password"=>$password,"gender"=>$gender,"age"=>$age,"ptype"=>$ptype,"os"=>$os,"min"=>$min,"max"=>$max)=$form;
-    echo $name.$password.$gender.$age.$ptype.$os.$max.$min;
+
     if(!preg_match("/(\w){2,} (\w){2,}/",$name) || preg_match("/,/",$name))
     $err_msgs[]="Username is invalid, it should contain at least two words";
     if(!preg_match("/[0-9a-zA-Z]{6,}/",$password) || preg_match("/,/",$password))
@@ -45,9 +45,9 @@ function validateForm($form){
         $err_msgs[]="Age is invalid, it should be in the range between 1-99";
     if(!preg_match("/^(Windows|Linux|Mac.OS)$/",$os)|| preg_match("/,/",$os))
         $err_msgs[]="OS is invalid, It should be Windows, Linux or Mac OS";
-        if(!preg_match("/^[1-9][0-9]/",$min)|| preg_match("/,/",$min))
+        if(!preg_match("/^[1-9]?[0-9]/",$min)|| preg_match("/,/",$min))
         $err_msgs[]="Min age is invalid, it should be in the range between 1-99";
-        if(!preg_match("/^[1-9][0-9]/",$max)|| preg_match("/,/",$max))
+        if(!preg_match("/^[1-9]?[0-9]/",$max)|| preg_match("/,/",$max))
   $err_msgs[]="Max age is invalid, it should be in the range between 1-99";
     return $err_msgs;
 }

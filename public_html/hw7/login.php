@@ -1,19 +1,11 @@
 <?php include("../hw4/top.html"); ?>
+<?php require("./controller/login-controller.php");?>
 <?php
 
-if(isset($_GET["message"])){
-    switch($_GET["message"]){
-        case "notfound":
-        $msg="Invalid username or password";
-        break;
-        case "loginFirst":
-        $msg="Please login first";
-        break;
-        default: 
-        $msg="Unknown message";
-    }
+if(parseMessage()){
+
 ?>
-<p style="color:red"><?=$msg?></p>
+<p style="color:red"><?=parseMessage()?></p>
 <?php
 }
 else {
@@ -35,9 +27,5 @@ else {
         <input type="submit"  value="View My Matches">
 </fieldset>
     </form>
-<?php
-function submit()
-{
-}
-?>
+
 <?php include("../hw4/bottom.html"); ?>
