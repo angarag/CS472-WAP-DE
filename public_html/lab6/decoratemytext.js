@@ -20,7 +20,7 @@ function mars() {
   //Exercise 1:
   //$("fieldset div#text span").css("font-size", "1.5em");
   //Exercise 2:
-  setInterval(() => {
+  timer = setInterval(() => {
     helper();
   }, 500);
   function helper() {
