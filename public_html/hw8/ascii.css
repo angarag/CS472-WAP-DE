@@ -1,0 +1,29 @@
+body {
+  background-color: #ccccff;
+  font: bold 14pt sans-serif;
+  width: 1024px;
+  margin: 0 auto;
+}
+h1 {
+  font: bold 14pt sans-serif;
+  text-align: center;
+}
+textarea {
+  margin: 0 auto;
+  display: block;
+  height: 400px;
+  width: 90%;
+  font: normal 12pt monospace;
+}
+fieldset {
+  display: inline-block;
+}
+div#fieldsets {
+  text-align: center;
+}
+footer {
+  float: right;
+}
+footer a {
+  display: block;
+}

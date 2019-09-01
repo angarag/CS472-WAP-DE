@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Angarag Batjargal" />
+    <meta name="description" content="This page is a homework for WAP course" />
+    <meta name="keywords" content="WAP, HTML, CSS" />
+    <title>ASCIImation</title>
+    <link rel="stylesheet" href="./ascii.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="./ascii.js"></script>
+    <script src="./animations.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>CSE 190 M ASCII Animation Viewer</h1>
+      <textarea cols="80" rows="20"></textarea>
+      <div id="fieldsets">
+        <fieldset>
+          <legend>Play Controls:</legend>
+          <button id="startButton" onclick="start()">Start</button
+          ><button id="stopButton" onclick="stop()">Stop</button>
+        </fieldset>
+        <fieldset>
+          <legend>Animation:</legend>
+          <select id="animation" onchange="changeOption()">
+            <option>Blank</option>
+            <option value="EXERCISE">Exercise</option>
+            <option value="JUGGLER">Juggler</option>
+            <option value="BIKE">Bike</option>
+            <option value="DIVE">Dive</option>
+            <option value="CUSTOM">Custom</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Size:</legend>
+          <select id="size" name="size" onchange="changeSize()">
+            <option value="12pt">Medium</option>
+            <option value="7pt">Tiny</option>
+            <option value="10pt">Small</option>
+            <option value="16pt">Large</option>
+            <option value="24pt">Extra Large</option>
+            <option value="32pt">XXL</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Speed:</legend>
+          <input
+            type="checkbox"
+            value="Turbo"
+            id="speed"
+            onclick="changeSpeed(this)"
+          />
+          <label for="speed">Turbo</label>
+        </fieldset>
+      </div>
+    </div>
+    <footer>
+      <a href="http://validator.w3.org/check/referer">
+        <img
+          src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+          alt="W3C validator"
+        />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img
+          src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+          alt="CSS validator"
+        />
+      </a>
+      <a href="https://webster.cs.washington.edu/jslint/?referer"
+        ><img src="https://webster.cs.washington.edu/w3c-js.png" alt="Valid JS"
+      /></a>
+    </footer>
+  </body>
+</html>
