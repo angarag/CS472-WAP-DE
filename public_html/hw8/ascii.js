@@ -14,7 +14,6 @@ function start() {
   frames = textarea.split("=====\n");
   frame_index = 0;
   console.log(textarea);
-  changeOption();
   mars = setInterval(() => {
     //console.log("animating");
     animateIt();

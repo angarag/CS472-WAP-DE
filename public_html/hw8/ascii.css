@@ -1,8 +1,13 @@
-body {
+body div:nth-child(1) {
   background-color: #ccccff;
   font: bold 14pt sans-serif;
   width: 1024px;
   margin: 0 auto;
+}
+.heart {
+  display: inline;
+  float: left;
+  color: red;
 }
 h1 {
   font: bold 14pt sans-serif;
