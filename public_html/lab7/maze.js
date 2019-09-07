@@ -78,7 +78,7 @@ $(document).ready(() => {
   });
   function reset(status_reset = true) {
     if (status_reset) $("#status").html("<br/>");
-    $("#maze .boundary").removeClass("youlose");
+    $(".boundary").removeClass("youlose");
     has_started = false;
     has_hit_walls = false;
     maze_event_counter = 0;
