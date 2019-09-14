@@ -106,7 +106,7 @@ function start() {
         if (tile[0]) console.log("My neighbor: ", tile[0].innerText);
         else {
           //console.log("empty tile encountered", neighbors[n]);
-          moveTile(elm, neighbors[n]);
+          moveTile(elm, neighbors[n], true);
           break;
         }
       }
@@ -133,7 +133,7 @@ function start() {
       "div[style*='left: " + node.x + "px; top: " + node.y + "px']";
     return $(selector).length > 0 ? $(selector)[0] : null;
   }
-  function moveTile(node, empty) {
+  function moveTile(node, empty, checkWinner = false) {
     console.log("MOVING ", node, " to EMPTY ", empty);
     emptyTile = getCurrentPixelPosition(node);
     const selector = {
@@ -143,6 +143,34 @@ function start() {
     $(node).css(selector);
 
     console.log("New Empty location: ", emptyTile);
+    if (checkWinner) {
+      setTimeout(checkIfWon, 0);
+    }
+  }
+  function checkIfWon() {
+    let counter = 0;
+    let elm = null;
+    const divs = $("#puzzlearea div");
+    console.dir(divs);
+    for (let div of divs) {
+      elm = div.style;
+
+      if (
+        parseInt(elm.left) === -parseInt(elm.backgroundPositionX) &&
+        parseInt(elm.top) === -parseInt(elm.backgroundPositionY)
+      ) {
+        counter++;
+      } else {
+        console.log(
+          parseInt(elm.left),
+          -parseInt(elm.backgroundPositionX),
+          parseInt(elm.top),
+          -parseInt(elm.backgroundPositionY)
+        );
+      }
+    }
+    console.log("Checking Winner: counter=", counter);
+    if (counter == 15) alert("You won!");
   }
   function hightLightTile(node) {
     console.log("Highlighting  tile ", node);
@@ -179,6 +207,16 @@ function start() {
     if (me) moveTile(me, emptyTile);
   }
   $("#shufflebutton").click(() => {
-    shuffle();
+    const t0 = performance.now();
+    let i = 0;
+    do {
+      shuffle();
+      i++;
+    } while (performance.now() - t0 < 777 && i < 333);
+    const t1 = performance.now();
+    console.log(
+      "Call to doSomething took " + (t1 - t0) + " milliseconds. & i is ",
+      i
+    );
   });
 }
